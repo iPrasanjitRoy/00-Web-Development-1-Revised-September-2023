@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+nav {
+    display: flex;
+    height: 55px;
+    background-color: white;
+    margin: 5px;
+    padding: 5px;
+
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 150px;
+    padding: 5px;
+}
+
+nav ul {
+    height: 55px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+nav ul li {
+    list-style-type: none;
+    display: inline;
+    padding: 20px;
+
+
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    font-weight: bolder;
+}
+
+
+
+
+
+body {
+    background-color: aliceblue;
+}
+
+
+
+
+.container {
+    max-width: 100vw;
+}
+
+
+.container img {
+    width: 100vw;
+    height: 500px;
+}
+
+.h1_c {
+    display: inline-block;
+    display: flex;
+    color: white;
+    position: relative;
+    top: 100px;
+    left: 390px;
+    font-weight: bold;
+    font-style: italic;
+    font-size: xx-large;
+
+}
+
+
+
+
+.p1_c {
+    display: inline-block;
+    display: flex;
+    color: white;
+    position: relative;
+    bottom: 400px;
+    left: 100px;
+    font-weight: bold;
+    font-style: italic;
+    font-size: xx-large;
+
+}
+
+.h2 {
+    display: flex;
+    justify-content: center;
+}
+
+
+.flexbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    height: 400px;
+}
+
+.OurServices {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.Texts {
+    margin-top: 10px;
+}
+
+
+
+
+
+
+footer {
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    background-color: antiquewhite;
+}
+
+.footer {
+    margin: 5px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+
+
+.finalcontainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 10px;
+
+}
+
+.Contact-Form {
+    position: relative;
+    left: 300px;
+
+}
+
+.Newsletter-Form {
+    position: relative;
+    top: 100px;
+}
+
+
+.Newsletter-Form,
+.Contact-Form {
+    width: 50%;
+}
+
+
+
+.Form-Group {
+    margin-bottom: 15px;
+}
+
+
+.Form-Group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+
+.Form-Group input[type="email"],
+.Form-Group input[type="text"],
+.Form-Group textarea {
+
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+
+.Form-Group button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.Form-Group button:hover {
+    background-color: red;
+}
+
+
+
+

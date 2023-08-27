@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: red;
+            height: 80vh;
+        }
+
+        .box {
+            border: 2px solid black;
+            display: inline-block;
+
+        }
+
+        img {
+            width: 400px;
+            height: 450px;
+            /* transition-property: width; 
+            transition-duration: 2s; 
+            transition-timing-function: ease-in;
+            transition-delay: 3s; */
+            transition: width 1s ease-in-out, height 4s ease-in;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <img id="myImage" src="https://source.unsplash.com/960x520/?nature">
+            <button id="btn">Toggle</button>
+        </div>
+
+    </div>
+</body>
+
+
+<script>
+    myImage.style.width = '400px';
+    myImage.style.height = '450px';
+
+    btn.addEventListener("click", () => {
+        if (myImage.style.width === '400px') {
+            myImage.style.width = "800px";
+            myImage.style.height = "900px"; // Adjusting height for the larger width
+        } else {
+            myImage.style.width = "400px";
+            myImage.style.height = "450px"; // Adjusting height for the original width
+        }
+    });
+</script>
+
+</html>
+
+

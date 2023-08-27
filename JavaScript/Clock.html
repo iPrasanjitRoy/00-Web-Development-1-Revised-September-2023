@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    
+    <title>Hello, world!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .display {
+            font-size: 30px;
+            color: #333333;
+            margin-bottom: 100px;
+            padding: 20px;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        #time {
+            display: flex;
+            font-size: 40px;
+            color: #666666;
+            text-align: center;
+            align-content: center;
+            justify-content: center;
+            border: 2px solid black;
+            border-radius: 20px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="display">Current Time And Date:<br></h1>
+        <span id="time"></span>
+    </div>
+
+
+    <script>
+        // Declare Variables To Hold Time And Date Values 
+        let a;       // Variable to store the current date and time
+        let date;    // Variable to store formatted date
+        let time;    // Variable to store formatted time 
+
+        // Configuration for date formatting
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+        // Execute the following code every 1000 milliseconds (1 second)
+        setInterval(() => {
+            // Get the current date and time
+            a = new Date();
+
+            // Format the date using specified options (weekday, year, month, day)
+            // The toLocaleDateString() function is a built-in JavaScript method that is used to format a Date object into a human-readable date string according to the rules of the specified locale (language and region). 
+
+            date = a.toLocaleDateString(undefined, options);
+
+            // Format the time as 'hours:minutes:seconds'
+            time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+
+            // Update the content of the HTML element with the id 'time'
+            // Display the formatted time and date
+            document.getElementById('time').innerHTML = time + " On " + date;
+        }, 1000);   // The interval is set to 1000 milliseconds (1 second)
+    </script>
+
+</body>
+
+</html>
+
+
+
+

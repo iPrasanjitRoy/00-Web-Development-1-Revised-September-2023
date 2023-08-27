@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Your Beautiful Page</title>
+    <style>
+        /* Reset some default styles */
+        body,
+        h1,
+        h2,
+        h3,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+        }
+
+        /* Body styles */
+        .container {
+            max-width: 80vh;
+            min-height: 80vh;
+            margin: 0 auto;
+            padding: 5px;
+            background-color: #fff;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Your Beautiful AJAX Page</h1>
+        <p>Welcome to a world of coder!</p>
+    </header>
+
+    <div class="container">
+        <h2>AJAX</h2>
+        <p></p>
+        <button type="button" id="fetchBtn">Fetch Data</button>
+        <button type="button" id="popBtn">Populate</button>
+
+
+        <h1>List Of Employee</h1>
+        <ul id="list">
+
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Your Beautiful Page. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
+
+<script>
+
+    console.log("Ajax Tutorial In One Video");
+
+
+
+    let fetchBtn = document.getElementById('fetchBtn');
+    fetchBtn.addEventListener('click', buttonClickHandler)
+
+    function buttonClickHandler() {
+        console.log('You Have Clicked The fetchBtn');
+
+        // Instantiate An Xhr Object  
+        const xhr = new XMLHttpRequest();
+
+        // Open The Object
+        // xhr.open('GET', 'Harry.txt', true); 
+
+
+        /**********************************************************/
+
+
+        // USE THIS FOR POST REQUEST 
+        xhr.open('POST', 'https://dummyjson.com/products/add', true);
+        xhr.getResponseHeader('Content-type', 'application/json');
+
+
+
+        /**********************************************************/
+        // What To Do On Progress (Optional) 
+        xhr.onprogress = function () {
+            console.log('On Progress');
+        }
+
+
+        xhr.onreadystatechange = function () {
+            console.log('Ready State IS ', xhr.readyState);
+
+        }
+
+
+        // What To Do When Response IS Ready 
+        xhr.onload = function () {
+            if (this.status === 200) {
+
+                console.log(this.responseText)
+            }
+            else {
+                console.log("Some Error Occured")
+            }
+        }
+        /**********************************************************/
+
+
+
+
+        // Send The Request
+        // params = `{"name":"Prasanjit","salary":"150000","age":"25"}`; 
+        params = { title: 'BMW Pencil' };
+        xhr.send(params);
+
+        console.log("We Are Done!");
+
+    }
+
+
+
+
+    let popBtn = document.getElementById('popBtn');
+    popBtn.addEventListener('click', popHandler);
+
+
+
+
+    function popHandler() {
+        console.log('You Have Clicked The Pop Handler');
+
+        // Instantiate An Xhr Object  
+        const xhr = new XMLHttpRequest();
+
+        // Open The Object 
+        xhr.open('GET', 'Employes.json', true);
+
+        /**********************************************************/
+        // What To Do When Response is Ready 
+        xhr.onload = function () {
+            if (this.status === 200) {
+                let obj = JSON.parse(this.responseText);
+                let emp_list = obj.data;
+                let list = document.getElementById('list');
+                str = "";
+
+
+                for (key in emp_list) {
+                    str += `<li>${emp_list[key].employee_name} </li>`;
+                }
+                list.innerHTML = str;
+            }
+            else {
+                console.log("Some Error Occured")
+            }
+        }
+
+        // Send The Request
+        xhr.send();
+        console.log("We Are Done Fetching Employees!");
+
+    }
+
+</script>
+
+

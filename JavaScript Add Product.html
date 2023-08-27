@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Add Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .product {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .product input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .add-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add Product</h1>
+        <div id="product-list">
+            <!-- Product input fields will be added here -->
+        </div>
+        <!-- Button to add new products -->
+        <button id="add-product-button" class="add-button">Add Product</button>
+    </div>
+
+    <script>
+        // Get the container where product input fields will be added
+        const productList = document.getElementById("product-list");
+
+        // Get the "Add Product" button
+        const addProductButton = document.getElementById("add-product-button");
+
+        // Counter to keep track of the number of products
+        let productCount = 0;
+
+        // Add event listener to the "Add Product" button
+        addProductButton.addEventListener("click", () => {
+            // Increment the product counter
+            productCount++;
+
+            // Create a new product container
+            const newProductDiv = document.createElement("div");
+            newProductDiv.classList.add("product");
+
+            // Create a new input field for the product name
+            const newProductInput = document.createElement("input");
+            newProductInput.type = "text";
+            newProductInput.placeholder = "Product Name " + productCount;
+
+            // Append the input field to the product container
+            newProductDiv.appendChild(newProductInput);
+
+            // Append the product container to the product list
+            productList.appendChild(newProductDiv);
+        });
+    </script>
+</body>
+
+</html>
+

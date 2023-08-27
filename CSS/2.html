@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* Block Display */
+        .block-element {
+            display: block;
+            background-color: lightblue;
+            width: 200px;
+            height: 100px;
+            margin: 10px;
+        }
+
+        /* Inline Display */
+        .inline-element {
+            display: inline;
+            background-color: lightgreen;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        /* Inline-Block Display */
+        .inline-block-element {
+            display: inline-block;
+            background-color: lightcoral;
+            width: 100px;
+            height: 50px;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        /* Flex Display */
+        .flex-container {
+            display: flex;
+            background-color: lightyellow;
+            justify-content: space-between;
+        }
+
+        /* Grid Display */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            background-color: lightgrey;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Block Display -->
+    <div class="block-element">Block Element</div>
+
+    <!-- Inline Display -->
+    <span class="inline-element">Inline Element</span>
+    <span class="inline-element">Another Inline</span>
+
+    <!-- Inline-Block Display -->
+    <div class="inline-block-element">Inline-Block 1</div>
+    <div class="inline-block-element">Inline-Block 2</div>
+
+    <!-- Flex Display -->
+    <div class="flex-container">
+        <div>Flex Item 1</div>
+        <div>Flex Item 2</div>
+        <div>Flex Item 3</div>
+    </div>
+
+    <!-- Grid Display -->
+    <div class="grid-container">
+        <div>Grid Item 1</div>
+        <div>Grid Item 2</div>
+        <div>Grid Item 3</div>
+        <div>Grid Item 4</div>
+        <div>Grid Item 5</div>
+        <div>Grid Item 6</div>
+    </div>
+
+</body>
+
+</html>
+

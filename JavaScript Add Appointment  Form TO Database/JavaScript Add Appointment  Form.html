@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Doctor Appointment Form</title>
+    <style>
+        .doctor-container {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .patient-container {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1>Doctor Appointment Form</h1>
+    <form id="appointmentForm" method="POST" action="submit.php">
+
+        <div class="container">
+            <div class="doctor-container">
+                <label for="doctor">Select a Doctor:</label>
+                <select name="doctor[]" required>
+                    <option value="Dr. Smith">Dr. Smith</option>
+                    <option value="Dr. Johnson">Dr. Johnson</option>
+                    <option value="Dr. Williams">Dr. Williams</option>
+                    <option value="Dr. Brown">Dr. Brown</option>
+                    <option value="Dr. Davis">Dr. Davis</option>
+                </select>
+            </div>
+
+
+            <div class="patient-container">
+                <h2>Patient Information</h2>
+                <label for="patientName">Patient Name:</label>
+                <input type="text" name="patientName[]" required>
+                <label for="appointmentDate">Appointment Date:</label>
+                <input type="date" name="appointmentDate[]" required>
+            </div>
+        </div>
+
+        <button type="button" id="addPatientBtn">Add Another Patient</button>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('addPatientBtn').addEventListener('click', function () {
+            const container = document.querySelector('.container');
+            const patientDiv = document.createElement('div');
+            patientDiv.innerHTML = `
+                <div class="doctor-container">
+                    <label for="doctor">Select a Doctor:</label>
+                    <select name="doctor[]" required>
+                        <option value="Dr. Smith">Dr. Smith</option>
+                        <option value="Dr. Johnson">Dr. Johnson</option>
+                        <option value="Dr. Williams">Dr. Williams</option>
+                        <option value="Dr. Brown">Dr. Brown</option>
+                        <option value="Dr. Davis">Dr. Davis</option>
+                    </select>
+                </div>
+                <div class="patient-container">
+                    <h2>Patient Information</h2>
+                    <label for="patientName">Patient Name:</label>
+                    <input type="text" name="patientName[]" required>
+                    <label for="appointmentDate">Appointment Date:</label>
+                    <input type="date" name="appointmentDate[]" required>
+                </div>
+            `;
+            container.appendChild(patientDiv);
+        });
+    </script>
+</body>
+
+</html>
